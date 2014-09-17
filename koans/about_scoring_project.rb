@@ -39,14 +39,12 @@ def score(dice)
     case number
     when 1
       add_score = 1000 * (count / 3) + 100 * (count % 3)
-      score += add_score
     when 5
       add_score = 500 * (count / 3) + 50 * (count % 3)
-      score += add_score
     else
       add_score = 100 * number * (count / 3)
-      score += add_score
     end
+    score += add_score
   end
   score
 end
