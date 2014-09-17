@@ -34,45 +34,27 @@ def score(dice)
   dice_numbers = Array.new(7, 0)
   dice.each { |n| dice_numbers[n] += 1 }
   return score if dice.all? { |n| n == 0 }
-
-  while dice_numbers.any? { |n| n > 0 }
-    unique = dice.uniq
-    unique.each do |unique_num|
-      if unique_num == 1
-        if dice_numbers[1] < 3
-          score += 100 * dice_numbers[1]
-          dice_numbers[1] = 0
-        else
-          score += 1000
-          dice_numbers[1] - 3
-        end
-      end
-
-      if unique_num == 5
-        if dice_numbers[5] < 3
-          score += 50 * dice_numbers[5]
-          dice_numbers[5] = 0
-        end
-      end
-
-      if dice_numbers[unique_num] == 3
-        score += 100 * unique_num
-        dice_numbers[unique_num] - 3
-      end
+  dice_numbers.each_with_index do |count, number|
+    next if count == 0
+    p "number: #{number}, count: #{count}, divide: #{count / 3}, mod: #{count % 3}"
+    case number
+    when 1
+      add_score = 1000 * (count / 3) + 100 * (count % 3)
+      p "add_score: #{add_score}"
+      score += add_score
+      p "score: #{score}"
+    when 5
+      add_score = 500 * (count / 3) + 50 * (count % 3)
+      score += add_score
+      p "score: #{score}"
+    else
+      add_score = 100 * number * (count / 3)
+      score += add_score
+      p "score: #{score}"
     end
-    p "what's unique?"
-    p unique
   end
-  score
-
-  # if unique[0] > 1
-  #   unique.each do |n|
-  #     if dice_numbers[n] >= 3
-  #       score += n * 100
-  #     end
-  #   end
-  # end
   p "what's the score? #{score}"
+  p "done"
   score
 end
 
