@@ -33,28 +33,21 @@ def score(dice)
   score = 0
   dice_numbers = Array.new(7, 0)
   dice.each { |n| dice_numbers[n] += 1 }
-  return score if dice.all? { |n| n == 0 }
+  return score if dice.empty?
   dice_numbers.each_with_index do |count, number|
     next if count == 0
-    p "number: #{number}, count: #{count}, divide: #{count / 3}, mod: #{count % 3}"
     case number
     when 1
       add_score = 1000 * (count / 3) + 100 * (count % 3)
-      p "add_score: #{add_score}"
       score += add_score
-      p "score: #{score}"
     when 5
       add_score = 500 * (count / 3) + 50 * (count % 3)
       score += add_score
-      p "score: #{score}"
     else
       add_score = 100 * number * (count / 3)
       score += add_score
-      p "score: #{score}"
     end
   end
-  p "what's the score? #{score}"
-  p "done"
   score
 end
 
