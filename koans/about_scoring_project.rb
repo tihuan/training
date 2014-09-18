@@ -34,6 +34,7 @@ def score(dice)
   dice_numbers = Array.new(7, 0)
   dice.each { |n| dice_numbers[n] += 1 }
   return score if dice.empty?
+  # Indices are used to represent numbers
   dice_numbers.each_with_index do |count, number|
     next if count == 0
     case number
