@@ -35,7 +35,6 @@ def score(dice)
   dice.each { |n| dice_numbers[n] += 1 }
   return score if dice.empty?
   # Indices are used to represent numbers
-  # Testt222
   dice_numbers.each_with_index do |count, number|
     next if count == 0
     case number
