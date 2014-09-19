@@ -1,0 +1,83 @@
+- Standard Info:
+
+x · IP address
+· Location of user's ISP
+· Name of ISP
+· Location of user (Continent, Country, City - approximate latitude and longitude)
+· Timezone of user
+· Date/Time they are visiting
+· Length of visit
+· Every page visited on your site
+· Whether they have visited before
+x · Operating system
+· Various paths to folders on your system
+x · Versions of programs being used on your system
+· Name of your computer
+· How you access the internet (through a proxy or not)
+· What types of documents your browser is set up to accept
+· Default language of your browser (language you probably speak)
+· Site you visited last
+· Number of sites you visited before getting to this one
+· Various miscellaneous technical settings of your browser
+· Number of processors in your PC
+· Type of processor · Port you are accessing the site through
+· Any session variables or cookies that have been set
+· What browser extensions they have enabled/disabled (for instance, Flash, Javascript, PDF support etc)
+· Size of users screen, number of colours etc
+
+- What Google collects for YouTube bug report:
+
+Description:
+
+Testing Report
+
+Highlighted Text:
+
+- 2
+- Main Talk: Famo.us/Angular: A case study of AngularJS as a framework for frameworks (slides -
+
+Product Info:
+
+is_branded: false
+guide_subs: NA
+accept_language: en-US,en;q=0.5
+experiments: 901608,902408,906001,910812,911435,911436,911507,912714,912719,912725,913308,913309,916928,916929,917000,918119,918121,919388,919389,920609,921603,922319,922804,922809,922927,923024,923363,925011,927006,927622,927626,927881,927891,929507,929509,929940,929943,929947,930008,930666,930667,930812,930819,931025,931339,931341,931943,931983,932404,934030,934032,935707,936115,937217,937422,937424,937512,937817,937912,938006,938302,938639,938703,938705,939201,939957,940641,940915,940918,941412,941414,941423,943301,943407,943410,944702,944905,945117,945401,946013,947204,947209,947503,949001,949004,950004,950303,951101,951601,952302,953801
+logged_in: true
+is_partner: false
+flashVersion: 15.0.0
+playback_id: Fs6UilD5S-v70YYy
+
+Browser Info:
+
+appCodeName: Mozilla
+appName: Netscape
+appVersion: 5.0 (Macintosh)
+cookieEnabled: true
+onLine: true
+platform: MacIntel
+userAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0
+javaEnabled: false
+pluginNames:
+- Shockwave Flash
+- QuickTime Plug-in 7.7.3
+- Default Browser Helper
+- SharePoint Browser Plug-in
+- Lync Meeting Join Plug-in
+
+Page Info:
+
+URL: https://www.youtube.com/watch?v=bzjDYzOHSAE
+
+Potential things to collect:
+
+1. Three platforms - client-page, admin-full-client-list, admin-client-all-data
+2. behind firewall? A B test using technique in 5.
+3. behind proxy?  http://winmxunlimited.net/apis/proxy-detection-api/
+4. block external links? same technique as popup
+5. block popup? http://stackoverflow.com/questions/2914/how-can-i-detect-if-a-browser-is-blocking-a-popup
+6. whitelist? same as 2.
+7. audio and video formats? Modernizr ex:
+8. Detect plugins? navigator.plugins get both description and name
+ex: name: "Shockwave Flash"
+     desc: "Shockwave Flash 15.0 r0"
+9. cookies? http://stackoverflow.com/questions/531393/how-to-detect-server-side-whether-cookies-are-disabled
