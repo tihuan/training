@@ -1,4 +1,4 @@
-// JS
+# JS
 jQuery(function($)) {
   function changeTab(e) {
     e.preventDefault();
@@ -9,7 +9,7 @@ jQuery(function($)) {
   $("#tabs ul li a").click(changeTab);
 };
 
-// Coffee
+# Coffee
 $ ->
   changeTab = (e) ->
     e.preventDefault()
@@ -18,3 +18,36 @@ $ ->
 
   $("#tabs ul li a").click changeTab
 
+# JS
+function showFlights(activeDiv) {
+  $("#tabs div").hide();
+
+  if (fetchingFlights) {
+    fetchingFlights.abort();
+  }
+
+  fetchingFlights = $.ajax('/flights', {
+    data: { date: activeDiv },
+    cache: false,
+    error: function(result) {
+      if (result.statusText != "abort") {
+        $('#tabs #error').show();
+      }
+    }
+  });
+}
+
+# Coffee
+showFlights = (activeDiv) ->
+  $('#tabs div').hide()
+
+  # fetchingFlights?.abort()
+  if fetchingFlights
+    fetchingFlights.abort()
+
+  fetchingFlights = $.ajax '/flights'
+    data:
+      date: activeDiv
+    cache: false
+    error: (result) ->
+      $('#tabs #error').show() if result.statusText isnt "abort"
